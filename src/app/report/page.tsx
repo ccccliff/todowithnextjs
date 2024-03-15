@@ -13,7 +13,9 @@ const page = async () => {
   if (!response.ok) {
     throw new Error("데이터를 불러올 수 없습니다!");
   }
+
   const todos: Todo[] = await response.json();
+  //필터로 투두리스트 현황 가져오기
   const donetodos = todos.filter((i) => i.isDone == true);
   return (
     <div className="flex flex-col items-center w-full h-screen bg-white text-black">

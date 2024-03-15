@@ -3,6 +3,7 @@ const page = async () => {
   if (!response.ok) {
     throw new Error("데이터를 불러올 수 없습니다!");
   }
+  //컴퍼니 정보 가져오기
   const companyInfo = await response.json();
   return (
     <div className="flex flex-col items-center w-full h-screen bg-white text-black">

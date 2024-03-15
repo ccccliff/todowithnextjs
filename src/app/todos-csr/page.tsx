@@ -79,7 +79,7 @@ const Page = () => {
       });
     },
   });
-
+  //입력 핸들러
   const todoHandler = () => {
     if (!title.trim() || !contents.trim()) {
       toast.error("제목과 내용 모두 입력하세요");
@@ -95,13 +95,15 @@ const Page = () => {
       setcontents("");
     }
   };
-
+  // 삭제 핸들러
   const deleteHandler = (id: string) => {
     deleteMutation.mutate(id);
   };
+  //토글핸들러
   const stateHandler = (id: string, isDone: boolean) => {
     toggleMutation.mutate({ id, isDone });
   };
+  //페이지 이동 핸들러
   const pageHandler = () => {
     router.push("/report");
   };
